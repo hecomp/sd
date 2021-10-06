@@ -1,0 +1,40 @@
+section:
+# platform/os/channel/brand/product/packages/usercountry/userregion/usercity/countryIspRange/version/VL/hash
+# 1 ios vpn360 ads default
+- id: ads_vpn360_ios_default
+  platform: ios
+  brand: vpn360
+  saveas: JSON
+  config: '{"ad_interval":120000,"ad_placements":{"manual_connect":"/21684839133/dfp_vpn360_ios_mc_interstitial","manual_disconnect":"/21684839133/dfp_vpn360_ios_md_interstitial"}}'
+# 2 android vpn360 ads default
+- id: ads_vpn360_android_default
+  platform: android
+  brand: vpn360
+  saveas: JSON
+  config: '{"ad_interval":120000,"ad_placements":{"manual_connect":"/21684839133/dfp_vpn360_android_mc_interstitial","manual_disconnect":"/21684839133/dfp_vpn360_android_md_interstitial","app_foreground":"/21684839133/dfp_vpn360_android_appforeground_interstitial"}}'
+# 3 android hss ads default
+- id: ads_hss_android_default
+  platform: android
+  brand: hss
+  saveas: JSON
+  config: '{"ad_interval":120000,"ad_placements":{"app_foreground":"/21684839133/dfp_HSS_android_appforeground_interstitial_v700","manual_connect":"/21684839133/dfp_HSS_android_manualconnect_disconect_interstitial_v700","manual_disconnect":"/21684839133/dfp_HSS_android_manualconnect_disconect_interstitial_v700","rewarded_video":"ca-app-pub-4751437627903161/9714087114"}}'
+# ios betternet
+- id: ads_betternet_ios_default
+  platform: ios
+  brand: betternet
+  saveas: JSON
+  config: '{}'
+# ios hexa
+- id: ads_hexa_ios_default
+  platform: ios
+  brand: hexatech
+  saveas: JSON
+  config: '{}'
+######################################################_EMBEDDED_IOS_MAC_##########################################################
+- id: embedded_ios_mac_default
+  platform: _("ios|mac","~")_
+  brand: _("hss|betternet|vpn360|hexatech|ultravpn","~")_
+  hash: I00000000000000000000000000000000
+  saveas: JSON
+  meta: '{"embedded":true}'
+  config: '{}'
