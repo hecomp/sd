@@ -39,6 +39,9 @@ jobs:
       - id: files
         name: Run the action
         uses: ./
+        env: 
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_EVENT_PR_NUMER: ${{ github.event.pull_request.number }}
 
       # - name: Print steps context output
       #   run: |
