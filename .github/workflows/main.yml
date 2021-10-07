@@ -42,6 +42,8 @@ jobs:
         env: 
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_EVENT_PR_NUMER: ${{ github.event.pull_request.number }}
+          # DESTINATION_BRANCH: ${{ }}
+          # SOURCE_BRANCH: ${{ }}
 
       # - name: Print steps context output
       #   run: |
