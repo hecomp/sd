@@ -29,16 +29,25 @@ jobs:
         env:
           STEPS_CONTEXT: ${{ toJson(steps) }}
         run: echo "$STEPS_CONTEXT"
-  # test:
-  #   name: Test
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Debug github.sha
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }}
 
-  #     - id: files
-  #       name: Run the action
-  #       uses: ./
+      - id: files
+        name: Run the action
+        uses: ./
+        env: 
+          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_EVENT_PR_NUMER: ${{ github.event.pull_request.number }}
+          # GITHUB_HEAD_REF: ${{  }}
+          # DESTINATION_BRANCH: ${{ }}
+          # SOURCE_BRANCH: ${{ }}
 
       # - name: Print steps context output
       #   run: |
