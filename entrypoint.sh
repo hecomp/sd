@@ -12,7 +12,7 @@ echo $GITHUB_SHA
 
 echo "::set-degug name=sha::$GITHUB_SHA"
 
-pr_number=${github.event.pull_request.number}
+pr_number=${{github.event.pull_request.number}}
 
 echo "::set-degug name=pr_number::$pr_number"
 
