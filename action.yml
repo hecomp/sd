@@ -4,10 +4,7 @@ author: 'Heber Silva'
 branding:
   icon: file
   color: purple
-inputs: 
-  github_token:
-    description: GitHub token secret
-    required: true
+inputs:
   github_sha:
     description: GitHub sha
     required: true
@@ -18,5 +15,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.github_token }}
     - ${{ inputs.github_sha }}
