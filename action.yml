@@ -5,6 +5,9 @@ branding:
   icon: file
   color: purple
 inputs: 
+  github_token:
+    description: GitHub token secret
+    required: true
   github_sha:
     description: GitHub sha
     required: true
@@ -14,5 +17,6 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    GITHUB_SHA: ${{ inputs.github_sha }}
+  args:
+    - ${{ inputs.github_token }}
+    - ${{ inputs.github_sha }}
