@@ -16,7 +16,7 @@ echo "::set-degug name=sha::$GITHUB_SHA"
 URL="https://api.github.com/repos/${GITHUB_REPO}/pulls/${GITHUB_EVENT_PR_NUMER}/files"
 FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')
 if echo $FILES | grep -q ".yml"; then
-echo "json file changed!!"
+echo "yml file changed!!"
 else
-echo "no json file changed!!"
+echo "no yml file changed!!"
 fi
