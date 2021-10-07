@@ -35,6 +35,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Debug github.sha
+        run: |
+          git diff --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }}
 
       - id: files
         name: Run the action
@@ -42,6 +45,7 @@ jobs:
         env: 
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_EVENT_PR_NUMER: ${{ github.event.pull_request.number }}
+          GITHUB_HEAD_REF: ${{  }}
           # DESTINATION_BRANCH: ${{ }}
           # SOURCE_BRANCH: ${{ }}
 
