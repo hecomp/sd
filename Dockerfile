@@ -1,6 +1,10 @@
 # Base image
 FROM alpine:latest
 
+LABEL \
+  "name"="Config YML Validation Action" \
+  "maintainer"="Heber Silva<heber.silva@aura.com>"
+
 # installes required packages for our script
 RUN apk add --no-cache \
   bash \

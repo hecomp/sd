@@ -4,8 +4,15 @@ author: 'Heber Silva'
 branding:
   icon: file
   color: purple
+inputs: 
+  github_token:
+    description: GitHub token secret
+    required: true
+outputs:
+  pr_url:
+    description: 'Pull request URL'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.pokemon_id}}
+    - ${{ inputs.github_token }}
