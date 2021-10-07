@@ -45,7 +45,7 @@ jobs:
         env: 
           GITHUB_REPO: ${{ github.repository }}
           GITHUB_EVENT_PR_NUMER: ${{ github.event.pull_request.number }}
-          GITHUB_HEAD_REF: ${{  }}
+          # GITHUB_HEAD_REF: ${{  }}
           # DESTINATION_BRANCH: ${{ }}
           # SOURCE_BRANCH: ${{ }}
 
